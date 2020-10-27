@@ -60,7 +60,7 @@ void LoadGameModule(char* game_basedir, char* game_dir)
 			LoadGameModule("", game->string);
 			return;
 		}
-		if (strlen(game_dir) == 0)    // failed to load default game module
+		if (game_dir != NULL && strlen(game_dir) == 0)    // failed to load default game module
 			return;
 		LoadGameModule("", ""); // attempt to load default module
 	}
