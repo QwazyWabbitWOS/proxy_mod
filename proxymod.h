@@ -4,8 +4,12 @@
 
 // proxymod.h -- shared definitions for generic proxy module
 
-#ifdef WIN32
+#ifdef _WIN32
 #define GAME_MODULE			"gamex86.dll"
+#define WIN32_LEAN_AND_MEAN	//non-MFC
+#if _MSC_VER > 1500
+#pragma warning(disable : 4996)	// disable warnings from Visual Studio about deprecated CRT functions (_CRT_SECURE_NO_WARNINGS).
+#endif /*_MSC_VER */
 #endif
 
 #define	GAME_API_VERSION	3

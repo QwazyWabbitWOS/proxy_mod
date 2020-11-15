@@ -73,8 +73,8 @@ typedef game_export_t* (*GetGameAPI_t) (game_import_t*);
 
 game_export_t* GetGameAPI(game_import_t* gimport)
 {
-	char CurrentProxy[MAX_OSPATH];
-	char NextProxy[MAX_OSPATH];
+	char CurrentProxy[MAX_OSPATH] = { 0 };
+	char NextProxy[MAX_OSPATH] = { 0 };
 	char* LoopProxy;
 	char* colon;
 	int nextcolon;
@@ -108,7 +108,7 @@ game_export_t* GetGameAPI(game_import_t* gimport)
 				// weird stuff: win95 considers "folder  " and "folder" to be the same
 				// while "  folder" and "folder" are different (should be different in
 				// both cases!)
-				nextcolon = strlen(CurrentProxy);
+				nextcolon = (int)strlen(CurrentProxy);
 				while (LoopProxy[nextcolon] && isspace(LoopProxy[nextcolon]))
 					nextcolon++;
 				if ((LoopProxy[nextcolon] == ':' ||
