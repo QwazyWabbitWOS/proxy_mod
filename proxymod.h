@@ -14,7 +14,7 @@
 
 #define	GAME_API_VERSION	3
 
-#define PROXYMODVERNUM   "1.03"
+#define PROXYMODVERNUM   "1.04"
 #define PROXYMODVERSTATUS "RELEASE"
 #define PROXYMODPLATFORM "x86"
 #define PROXYMODVERSION  PROXYMODVERNUM " " PROXYMODPLATFORM " " __DATE__ " " PROXYMODVERSTATUS
@@ -35,10 +35,6 @@ extern HMODULE hGameDLL;
 
 typedef unsigned char 		byte;
 typedef enum { false, true }	qboolean;
-
-#ifndef NULL
-#define NULL ((void *)0)
-#endif
 
 // cvars:
 
@@ -346,3 +342,5 @@ extern cvar_t* pm_version;
 extern cvar_t* basedir;
 extern cvar_t* game;
 extern cvar_t* proxy;
+
+extern game_export_t* GetGameAPI(game_import_t* gimport); //QW//

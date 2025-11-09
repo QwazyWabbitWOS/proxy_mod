@@ -17,7 +17,7 @@ cvar_t* game;
 cvar_t* proxy;
 cvar_t* nextproxy;
 
-void ShutdownProxyMod(void)
+static void ShutdownProxyMod(void) //QW//
 {
 	ge.Shutdown(); // shutdown game DLL
 	FreeLibrary(hGameDLL);
@@ -25,14 +25,14 @@ void ShutdownProxyMod(void)
 }
 
 
-void InitProxyMod(void)
+static void InitProxyMod(void)	//QW//
 {
 	pmi.dprintf("==== Init (ProxyMod) ====\n");
 	ge.Init();
 }
 
 
-void LoadGameModule(char* game_basedir, char* game_dir)
+static void LoadGameModule(char* game_basedir, char* game_dir) //QW//
 {
 	char GameLibPath[MAX_OSPATH];
 

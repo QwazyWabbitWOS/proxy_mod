@@ -44,7 +44,7 @@ next procedure:
 
    quake2 +set proxy zkick:entz:gamecam  <rest_of_command_line>
 
-   (set the proxy cvar to a colon seperated list of proxy mods
+   (set the proxy cvar to a colon-separated list of proxy mods
    you want to load)
 
    This will load ProxyMod, and then ZKick, EntZ and GameCam, and
